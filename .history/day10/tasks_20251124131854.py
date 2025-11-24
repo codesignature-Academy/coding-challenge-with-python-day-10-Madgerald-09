@@ -18,20 +18,28 @@ Expected Result : [2, 4, 6, 8]
 
 
 # TASK 1
-def is_pangram(text):
-    text = text.lower() 
-    alphabet = "abcdefghijklmnopqrstuvwxyz"
-    for letter in alphabet:
-        if letter not in text:
-            return False 
-        return True
-# sentence = "The quick brown fox jumps over the lazy dog"
-sentence = input("Enter a sentence to check if it's a pangram: ")
+import string
+
+def pangram(text):
+    alphabet = set(string.ascii_lowercase)
+    text = text.lower()
+    
+    letters_in_text = set()
+
+    for char in text:
+        if char.isalpha():         
+            letters_in_text.add(char)
+
+    return alphabet.issubset(letters_in_text)
+
+
+sentence = "Th"
+
 if is_pangram(sentence):
     print(f'"{sentence}" is a pangram.')
 else:
     print(f'"{sentence}" is NOT a pangram.')
-
+    
     
     
 # TASK 2

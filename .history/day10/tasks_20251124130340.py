@@ -18,35 +18,30 @@ Expected Result : [2, 4, 6, 8]
 
 
 # TASK 1
+import string
+
 def is_pangram(text):
-    text = text.lower() 
-    alphabet = "abcdefghijklmnopqrstuvwxyz"
-    for letter in alphabet:
-        if letter not in text:
-            return False 
-        return True
-# sentence = "The quick brown fox jumps over the lazy dog"
-sentence = input("Enter a sentence to check if it's a pangram: ")
+    alphabet = set(string.ascii_lowercase)
+    text = text.lower()
+    
+    letters_in_text = set()
+
+    for char in text:
+        if char.isalpha():          # count only letters
+            letters_in_text.add(char)
+
+    return alphabet.issubset(letters_in_text)
+
+
+sentence = "The quick brown fox jumps over the lazy dog"
+
 if is_pangram(sentence):
     print(f'"{sentence}" is a pangram.')
 else:
     print(f'"{sentence}" is NOT a pangram.')
-
     
     
-# TASK 2
-def get_even_numbers(numbers):
-    evens = []
     
-    for num in numbers:
-        if num % 2 == 0:
-            evens.append(num)
-    
-    return evens
-
-sample_list = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-result = get_even_numbers(sample_list)
-
-print("Even numbers:", result)
+TASK 2
 
     

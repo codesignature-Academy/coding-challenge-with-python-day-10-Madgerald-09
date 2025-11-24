@@ -21,12 +21,14 @@ Expected Result : [2, 4, 6, 8]
 def is_pangram(text):
     text = text.lower() 
     alphabet = "abcdefghijklmnopqrstuvwxyz"
+
     for letter in alphabet:
         if letter not in text:
             return False 
-        return True
+        else:
+            return True
 # sentence = "The quick brown fox jumps over the lazy dog"
-sentence = input("Enter a sentence to check if it's a pangram: ")
+sentence = inpu
 if is_pangram(sentence):
     print(f'"{sentence}" is a pangram.')
 else:

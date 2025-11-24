@@ -24,7 +24,8 @@ def is_pangram(text):
     for letter in alphabet:
         if letter not in text:
             return False 
-        return True
+        else:
+            return True
 # sentence = "The quick brown fox jumps over the lazy dog"
 sentence = input("Enter a sentence to check if it's a pangram: ")
 if is_pangram(sentence):
